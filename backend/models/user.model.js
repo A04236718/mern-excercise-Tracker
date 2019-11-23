@@ -7,7 +7,7 @@ const userSchema = new Schema({
         type:String,
         required:true,
         unique:true,
-        trim:true,
+        trim:true, // whitespace is trimmed off the end
         minlength:3
     },
 }, { 
