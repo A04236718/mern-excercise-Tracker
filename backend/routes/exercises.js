@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let Exercise = require('../models/exercise.model');
 
-router.toute('/').get((req, res) => {
+router.route('/').get((req, res) => {
     Exercise.find()
         .then( exercises => res.json(exercises))
         .catch( err => res.status(404).json('Error: ' + err));
