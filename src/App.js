@@ -15,6 +15,7 @@ function App() {;
   return (
     <Router>
       <div className="Container">
+        <h1>Whats</h1>
         <Navbar />
         <br/>
         <Route path="/" exact component={ExerciseList} />
