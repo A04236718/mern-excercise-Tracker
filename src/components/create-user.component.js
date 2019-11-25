@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default Class CreateUser extends Component{
+export default class CreateUser extends Component{
 
     render(){
         return(
