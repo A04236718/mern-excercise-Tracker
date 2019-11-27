@@ -2,17 +2,19 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const Exercise = (props) => (
+const Exercise = props => (
     <tr>
 <td>{props.exercise.username}</td>
 <td>{props.exercise.description}</td>
 <td>{props.exercise.duration}</td>
 <td>{props.exercise.date.substring(0,10)}</td>
-    <Link to={"edit/"+props.exercise._id}>Edit</Link> ||
-    <a href="#" onClick={() => {
+    <Link to={"/edit/"+props.exercise._id}>Edit</Link> ||
+    <a href="/#" onClick={() => {
         props.deleteExercise(props.exercise._id)}}> Delete</a>
     </tr>
 )
+
+
 
 export default class ExerciseList extends Component{
 
@@ -35,7 +37,7 @@ export default class ExerciseList extends Component{
     }
 
     deleteExercise (id) {
-        axios.delete(`http://localhost:5000/exercises/${id}`)
+        axios.delete('http://localhost:5000/exercises/' + id)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -43,6 +45,7 @@ export default class ExerciseList extends Component{
         })
     }
 
+    // Essentially passing in those variables to the Exercise element which can be accesed via props
     exerciseList(){
         return this.state.exercises.map(currentexercise => {
             return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} 
