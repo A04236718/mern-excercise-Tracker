@@ -5,9 +5,9 @@ import logo from './logo.svg';
 import './App.css';
 // import the various components
 import Navbar from "./components/navbar.component";
-import ExerciseList from ".components/exercises-list.component";
-import EditExercise from ".components/edit-exercise.component";
-import CreateExercise from ".components/create-exercise.component"
+import ExerciseList from "./components/exercises-list.component";
+import EditExercise from "./components/edit-exercise.component";
+import CreateExercise from "./components/create-exercise.component"
 import CreateUser from "./components/create-user.component";
 
 
@@ -15,7 +15,6 @@ function App() {;
   return (
     <Router>
       <div className="Container">
-        <h1>Whats</h1>
         <Navbar />
         <br/>
         <Route path="/" exact component={ExerciseList} />
